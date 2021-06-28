@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ChangePage</title>
+
+</head>
+<body>
+<div align="center">
+<img id="img" src="/Image/1.jpg" align="center" width="600" height:"500">
+</div>
+
+    <script>
+        /*
+            分析：
+                1.在页面上使用img标签展示图片
+                2.定义一个方法，修改图片对象的src属性
+                3.定义一个定时器，每隔3秒调用方法一次。
+
+
+         */
+
+
+        //修改图片src属性
+        var number = 1;
+        function fun(){
+            number ++ ;
+            //判断number是否大于3
+            if(number > 3){
+                //三张图轮流转换
+                number = 1;
+            }
+            //获取img对象
+            var img = document.getElementById("img");
+            img.src = "/Image/"+number+".jpg";
+        }
+
+        //2.定义定时器
+        //每3000ms变化一次
+        setInterval(fun,3000);
+
+    </script>
+<div align = center style = "color:#FFC1C1">
+    <a href="index.html">回到主页面</a>
+</div>
+</body>
+</html>
